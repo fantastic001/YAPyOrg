@@ -8,5 +8,4 @@ from .TestORGMacro import *
 from .TestORGSection import *
 from .TestORGTable import *
 from .TestORGTableRow import *
-from .TestORGTape import *
 from .TestORGText import *

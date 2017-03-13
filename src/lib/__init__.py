@@ -8,5 +8,4 @@ from .ORGMacro import *
 from .ORGSection import *
 from .ORGTable import *
 from .ORGTableRow import *
-from .ORGTape import *
 from .ORGText import *
