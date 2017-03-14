@@ -1,0 +1,57 @@
+
+* Specific
+
++ develop tool for scheduling tasks
+
+It has to support 
+
++ automatic parsing of org-mode documents
++ making weekly schedule
++ measurement system through each project by manual entering data (with default to be last entered data)
++ automatic check if tasks for the month are scheduled properly
++ automatic output quarter reports and automatic creation of plans for next quarter
+
+
+* Measurable 
+
++ standard meassurement methods for projects
+
+* Achieveable
+
++ it can be achieved if development is held 5 hours per week
+
+
+* Relevant 
+
++ it will make organization more efficient and faster
+
+
+* Time-boxed 
+
+** TODO March 2017
+*** TODO plan org-mode parser - 1h - 1h
+*** TODO implement whole structure of classes representing elements - 2h - 2h
+*** TODO implement simple parsing of headings, paragraphs, lists, TODO/DONE tokens - 2h - 2h
+*** TODO test simple parser and fix bugs - 2h
+*** TODO implement automatic output to a new org-mode document based on structure of elements - 1h
+*** TODO design schedule file format - 1h
+*** TODO plan implementation of schedule creation and reading - 1h 
+*** TODO implement schedule creation - 1h 
+*** TODO implement schedule reading - 1h 
+*** TODO test and fix bugs for schedule creation and reading - 2h
+*** TODO plan implementation of automatic measurement system - 1h 
+*** TODO implement automatic measurement system - 1h 
+*** TODO test and fix bugs for automatic measurement system - 2h
+*** TODO plan implementation parsing of org-ode tables - 1h
+*** TODO implement parsing of org-mode tables - 1h 
+** TODO April 2017 
+*** TODO test and fix bugs for org-mode table parser - 2h 
+*** TODO plan implementation of reading reports - 1h 
+*** TODO implement reading reports - 1h 
+*** TODO test an fix bugs for reading reports - 2h 
+*** TODO plan implementation of automatic project time boxing checker for each month - 1h 
+*** TODO implement automatic time boxing checker - 1h 
+*** TODO test and fix bugs for automatic time boxing checker - 2h 
+*** TODO plan implementation of quarter reporter - 1h 
+*** TODO implement quarter reporter - 1h 
+*** TODO test and fix bugs for quarter reporter - 2h 
