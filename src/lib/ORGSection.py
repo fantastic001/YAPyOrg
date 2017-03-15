@@ -27,7 +27,7 @@ class ORGSection(ORGElement):
                 return (None, lines)
             print("Parsing %s" % lines[0])
             title = lines[0]
-            if "*" == title[0]:
+            if len(title) > 0 and "*" == title[0]:
                 level = 1
                 while title[level] == "*":
                     level = level + 1
