@@ -5,8 +5,9 @@ class ORGFile(object):
     
     def __init__(self, path):
         self.path = path 
-        self.file = open(path)
-        self.document = ORGDocument.parse(self.file.read().split("\n"))
+        f = open(path)
+        self.document = ORGDocument.parse(f.read().split("\n"))
+        f.close()
 
     def getDocument(self):
         return self.document
