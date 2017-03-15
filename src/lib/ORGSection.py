@@ -75,3 +75,16 @@ class ORGSection(ORGElement):
 
     def getSubSections(self):
         return self.ssections
+    
+    def getOutput(self):
+        """
+        Returns representation of the element in a org-mode format.
+        """
+        text = ""
+        text += "*"*self.getLevel() + " "
+        if self.isTODO():
+            text += "TODO "
+        if self.isDONE():
+            text += "DONE "
+        text += self.getTitle()
+        return text

@@ -29,3 +29,9 @@ class ORGElement:
         Returns one of types listed above
         """
         return None
+
+    def getOutput(self):
+        """
+        Returns representation of the element in a org-mode format.
+        """
+        return ""

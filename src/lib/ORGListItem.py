@@ -34,3 +34,10 @@ class ORGListItem(ORGElement):
 
     def getText(self):
         return self.title
+
+
+    def getOutput(self):
+        """
+        Returns representation of the element in a org-mode format.
+        """
+        return "+ " + self.getText()

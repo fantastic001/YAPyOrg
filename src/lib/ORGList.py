@@ -43,3 +43,13 @@ class ORGList(ORGElement):
 
     def getItems(self):
         return self.items
+    
+    def getOutput(self):
+        """
+        Returns representation of the element in a org-mode format.
+        """
+        items = []
+        for item in self.getItems():
+            items.append("+ " + item.getText())
+        return "\n".join(items)
+            

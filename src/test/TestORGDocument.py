@@ -17,3 +17,7 @@ class TestORGDocument(unittest.TestCase):
         self.assertEqual(len(root.getElements()), 1)
         self.assertEqual(elems, [])
         self.assertEqual(root.getSubSections()[0].getTitle(), "section")
+
+    def test_output(self):
+        document = ORGDocument.parse("some text\n* section\nblah".split("\n"))
+        self.assertEqual(document.getOutput(), "some text\n* section\nblah")

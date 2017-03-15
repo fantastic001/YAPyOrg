@@ -86,3 +86,12 @@ class ORGDocument(object):
                 else:
                     return (root, elems)
         return (root, elems)
+    
+    def getOutput(self):
+        """
+        Returns representation of the element in a org-mode format.
+        """
+        lines = []
+        for e in self.elements:
+            lines.append(e.getOutput())
+        return "\n".join(lines)

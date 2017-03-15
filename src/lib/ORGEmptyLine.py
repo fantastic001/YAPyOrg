@@ -19,3 +19,9 @@ class ORGEmptyLine(ORGElement):
         Returns one of types listed above
         """
         return ORGElement.ELEMENT_TYPE_EMPTY_LINE
+    
+    def getOutput(self):
+        """
+        Returns representation of the element in a org-mode format.
+        """
+        return ""
