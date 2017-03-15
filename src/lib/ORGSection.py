@@ -8,6 +8,8 @@ class ORGSection(ORGElement):
         self.level = kw.get("level", 1)
         self.todo = kw.get("TODO", False)
         self.done = kw.get("DONE", False)
+        self.ssections = [] 
+        self.elems = [] 
 
     def parse(lines):
             """
@@ -21,6 +23,9 @@ class ORGSection(ORGElement):
         
             if parsing cannot be done then (None, lines) is returned 
             """
+            if len(lines) == 0:
+                return (None, lines)
+            print("Parsing %s" % lines[0])
             title = lines[0]
             if "*" == title[0]:
                 level = 1
@@ -58,3 +63,15 @@ class ORGSection(ORGElement):
         self.done = True
     def isDONE(self):
         return self.done
+
+    def addElement(self, e):
+        self.elems.append(e)
+
+    def getElements(self):
+        return self.elems
+
+    def addSubSection(self, s):
+        self.ssections.append(s)
+
+    def getSubSections(self):
+        return self.ssections
