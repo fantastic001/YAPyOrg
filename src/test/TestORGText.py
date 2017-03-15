@@ -9,10 +9,9 @@ class TestORGText(unittest.TestCase):
         pass 
 
     def test_text(self):
-        tape = ORGTape("A\nB\n* Section")
-        text = ORGText.parse(tape)
+        text, c = ORGText.parse("A\nB\n* Section".split("\n"))
         self.assertEqual(text.getText(), "A\nB")
         
-        tape = ORGTape("* Section\nA\nB\n* Section")
-        text = ORGText.parse(tape)
+        tape = "* Section\nA\nB\n* Section".split("\n")
+        text, c = ORGText.parse(tape)
         self.assertEqual(text, None)

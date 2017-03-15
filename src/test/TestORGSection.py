@@ -16,28 +16,28 @@ class TestORGSection(unittest.TestCase):
         self.assertEqual(section.getLevel(), 2)
     
     def test_parse_none(self):
-        section = ORGSection.parse(["Section"])
+        section, c = ORGSection.parse(["Section"])
         self.assertEqual(section, None)
     
     def test_parse_simple(self):
-        section = ORGSection.parse(["* Section"])
+        section, c = ORGSection.parse(["* Section"])
         self.assertEqual(section.getTitle(), "Section")
 
     def test_parse_TODO(self):
-        section = ORGSection.parse(["* TODO Section"])
+        section, c = ORGSection.parse(["* TODO Section"])
         self.assertEqual(section.getTitle(), "Section")
         self.assertTrue(section.isTODO())
 
     def test_parse_DONE(self):
-        section = ORGSection.parse(["* DONE Section"])
+        section, c = ORGSection.parse(["* DONE Section"])
         self.assertEqual(section.getTitle(), "Section")
         self.assertTrue(section.isDONE())
     
     def test_parse_level(self):
-        section = ORGSection.parse(["** Section"])
+        section, c = ORGSection.parse(["** Section"])
         self.assertEqual(section.getTitle(), "Section")
         self.assertEqual(section.getLevel(), 2)
 
     def test_parse_complex(self):
-        section = ORGSection.parse("* Section 1\nsome text\n** Section 2\nsome other text\n*** Section 3\n* New section\nbla".split("\n"))
+        section, c = ORGSection.parse("* Section 1\nsome text\n** Section 2\nsome other text\n*** Section 3\n* New section\nbla".split("\n"))
         self.assertEqual(section.getTitle(), "Section 1")
