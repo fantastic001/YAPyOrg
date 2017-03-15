@@ -7,6 +7,7 @@ from .ORGMacro import *
 from .ORGSection import *
 from .ORGTable import *
 from .ORGText import *
+from .ORGEmptyLine import * 
 
 class ORGDocument(object):
     
@@ -22,6 +23,10 @@ class ORGDocument(object):
 
         Returns: (element, remaining_lines)
         """
+        elem, lines = ORGEmptyLine.parse(lines)
+        if elem != None:
+            return (elem, lines)
+
         elem, lines = ORGSection.parse(lines)
         if elem != None:
             return (elem, lines)
@@ -52,7 +57,8 @@ class ORGDocument(object):
         res = []
         elem, lines = ORGDocument.parseElement(lines)
         while elem != None:
-            res.append(elem)
+            if elem.getType() != ORGElement.ELEMENT_TYPE_EMPTY_LINE:
+                res.append(elem)
             elem, lines = ORGDocument.parseElement(lines)
         return ORGDocument(res)
 
