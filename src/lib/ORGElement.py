@@ -9,6 +9,7 @@ class ORGElement:
     ELEMENT_TYPE_TABLE = 6
     ELEMENT_TYPE_LIST_ITEM = 7
     ELEMENT_TYPE_EMPTY_LINE = 8
+    ELEMENT_TYPE_TABLE_ROW = 9
 
     def parse(lines):
         """
